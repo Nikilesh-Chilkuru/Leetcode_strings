@@ -1,0 +1,27 @@
+public class Solution {
+    public int countSegments(String s) {
+        
+        if(s.length() == 0 || s == null){
+            return  0 ;
+        }
+        
+        
+        int index = 0;
+        while( index < s.length() && s.charAt(index) == ' '){
+            
+            index++;
+        }
+        
+        if(index == s.length())
+            return 0;
+        
+        String ss = s.substring(index);
+        
+        
+        String segments[] = ss.split("(\\s)+");
+        for( int i=0; i<segments.length; i++){
+            System.out.println(segments[i]);
+        }
+        return segments.length;
+    }
+}
